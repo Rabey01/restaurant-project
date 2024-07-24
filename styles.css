@@ -1,0 +1,513 @@
+/* Reset all margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: #f5f5f5; /* Dark maroon background */
+    padding: 0; /* Ensure there's no padding */
+    line-height: 1.6;
+    margin: 0; /* Ensure there's no margin */
+    width: 100vw; /* Ensure the body takes the full viewport width */
+    overflow-x: hidden; /* Prevent horizontal scrolling if there's any overflow */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center; /* Center align items horizontally */
+    align-items: center; /* Center align items vertically */
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333333; /* Dark grey text */
+    width: 100%;
+    padding: 10px 0; /* Adjusted padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #cccccc; /* Subtle border at the bottom */
+    overflow: hidden;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    gap: 10px; /* Add a small gap between buttons */
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Button styling */
+nav button {
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* White text */
+    border: 2px solid #d4af37; /* Gold or bronze border */
+    padding: 12px 24px; /* Padding around text */
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+    font-size: 14px; /* Reduced font size */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Letter spacing */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-right: 10px; /* Space between buttons */
+}
+
+nav button:hover {
+    background-color: #d4af37; /* Gold or bronze on hover */
+    color: #333333; /* Dark text on hover */
+    border-color: #333333; /* Dark border on hover */
+}
+
+nav button:last-child {
+    margin-right: 0; /* No margin on the last button */
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-left: auto; /* Push social icons to the right */
+    padding-right: 40px; /* Add some space on the right of social icons */
+}
+
+.social-icon {
+    width: 16px; /* Adjust width of each social icon */
+    height: 18px; /* Adjust height of each social icon */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Ensure content is clipped within circle */
+    margin-left: 20px; /* Space between social icons */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon img {
+    width: 100%; /* Ensure image fills the container */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 2px solid #d4af37; /* Gold or bronze border */
+    transition: filter 0.3s ease; /* Smooth transition on hover */
+}
+
+.profile-pic:hover {
+    filter: brightness(0.8); /* Darken the image on hover */
+}
+
+/* Content area styling */
+#content {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center; /* Center content */
+    overflow: hidden;
+}
+
+/* Headline picture styling */
+.headline-pic {
+    width: 100%;
+    text-align: center; /* Center the headline picture */
+    display: flex;
+    justify-content: center; /* Ensure the image is centered */
+}
+
+/* Home picture styling */
+.home-pic {
+    width: 100%; /* Ensure the image covers the entire width of its container */
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Description styling */
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 25px;   
+    font-weight: 400;
+    line-height: 1.8;
+    width: 80%; /* Change to percentage for responsiveness */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 10px auto;
+    color:  #333333; /* Dark grey for description text */
+    background-color: #f0f0f0; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+/* Quotes styling */
+.quotes {
+    width: 32px; /* Default size of the image */
+    height: 32px; /* Default size of the image */
+    margin-top: 10px; /* Space from the description text */
+}
+
+/* Image gallery styling */
+.image-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Start with images invisible */
+    transition: opacity 0.8s ease; /* Smooth transition effect */
+    display: none; /* Initially hide all images */
+}
+
+.image-gallery img.active {
+    display: block; /* Show only the active image */
+    opacity: 1; /* Fade in the active image */
+}
+
+/* Navigation buttons styling */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed */
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #d4af37;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #d4af37;
+    color: #333333;
+    border-color: #333333;
+}
+
+.nav-btn.left {
+    margin-right: 10px; /* Space between buttons */
+}
+
+.nav-btn.right {
+    margin-left: 10px; /* Space between buttons */
+}
+
+/* Extra menu button styling */
+.extra-menu {
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* White text */
+    border: 2px solid #d4af37; /* Gold or bronze border */
+    padding: 12px 24px; /* Padding around text */
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+    font-size: 14px; /* Reduced font size */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Letter spacing */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    max-width: 600px; /* Set a maximum width */ 
+    display: block; /* Ensure it behaves as a block element */
+    margin: 0 auto;
+}
+
+.extra-menu:hover {
+    background-color: #d4af37; /* Gold or bronze on hover */
+    color: #333333; /* Dark text on hover */
+    border-color: #333333;
+}
+
+/* Card styling */
+#content1 {
+    display: grid;
+    grid-template-columns: repeat(2, max-content); /* Adjust columns to fit content */
+    gap: 16px;
+    padding: 20px;
+    justify-content: center; /* Center the columns */
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px; /* Reduced padding */
+    margin: 16px;
+    display: flex;
+    flex-direction: row; /* Row direction for card content */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 140px; /* Adjust height as needed */
+    width: 420px; /* Adjust width for a more compact design */
+    overflow: hidden;
+    position: relative;
+}
+
+.card-details {
+    flex: 1; /* Take remaining space */
+    text-align: left; /* Align text to the left */
+    padding-right: 8px; /* Reduced padding */
+    overflow: hidden;
+    order: 1; /* Ensure details are ordered before the image */
+}
+
+.card-details h2 {
+    margin: 0 0 4px 0; /* Reduced margin */
+    font-size: 15px; /* Reduced font size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-details p {
+    margin: 0 0 4px 0; /* Reduced margin */
+    font-size: 14px; /* Reduced font size */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.card-details p.expanded {
+    -webkit-line-clamp: unset;
+}
+
+.card-price {
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    margin: 0 0 4px 0; /* Reduced margin */
+}
+
+.card-button {
+    margin-top: auto; /* Push button to the bottom */
+}
+
+.card-button button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Reduced padding */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.card-button button:hover {
+    background-color: #45a049;
+}
+
+.card-image {
+    width: 110px; /* Fixed width */
+    height: 110px; /* Fixed height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px; /* Add margin to separate from content */
+    order: 2; /* Ensure image is ordered after the details */
+    border-radius: 8px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container, maintaining aspect ratio */
+}
+
+.menu-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.read-more {
+    color: #333333; /* Green color to match the Add to Cart button */
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline; /* Underline to indicate it's clickable */
+    display: inline-block;
+    margin-top: 4px; /* Small margin for spacing */
+    margin-bottom: 5px;
+}
+
+.read-more:hover {
+    color: #cfa51c; /* Darker green color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* styles.css */
+
+
+/* Contact page specific styles */
+.contact-page {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000; /* Ensure it stays on top */
+    padding: 20px;
+    font-family: Montserrat; /* Override font family */
+    text-align: center;
+}
+
+.contact-page.open {
+    right: 0; /* Slide in from the right */
+}
+
+.contact-page .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.contact-page h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #441e1e;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.contact-page p {
+    font-size: 15px;
+    color: #555;
+}
+
+.sec2 {
+    margin-top: 20px;
+}
+
+
+.image-with-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+
+.image-with-text p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+.con-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con-icon img{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.con-icon img:hover{
+    transform: scale(1.2);
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .description {
+        width: 90%; /* Adjust width for smaller screens */
+        font-size: 20px; /* Adjust font size for better readability */
+        padding: 15px; /* Adjust padding */
+    }
+
+    #content {
+        grid-template-columns: 1fr; /* Single column grid */
+        justify-content: center; /* Center the column */
+    }
+
+    .card {
+        width: calc(100% - 32px); /* Full width minus margins */
+    }
+}
+
+@media (max-width: 480px) {
+    .description {
+        width: 95%; /* Adjust width for even smaller screens */
+        font-size: 18px; /* Adjust font size for better readability */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav button {
+        margin-right: 0;
+        margin-bottom: 10px; /* Maintain space between buttons */
+        width: 100%;
+        text-align: center; /* Center-align text for buttons */
+    }
+
+    .social-icons {
+        margin-left: 0; /* Reset margin for social icons */
+        padding-right: 0; /* Reset padding for social icons */
+        margin-top: 10px; /* Add margin to separate social icons */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+
+    nav button {
+        font-size: 12px; /* Reduce font size for smaller screens */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
